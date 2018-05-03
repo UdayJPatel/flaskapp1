@@ -1,0 +1,91 @@
+{% include 'header.html' %}
+
+<h4 style = "text-align: center;">Employee Form</h4>
+		
+{% for message in form.employee_name.errors %}
+ <div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.username.errors %}
+ <div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.email.errors %}
+ <div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.user_password.errors %}
+ <div>{{ message }}</div>
+{% endfor %}
+
+{% for message in form.salary.errors %}
+ <div>{{ message }}</div>
+{% endfor %}
+
+{{ processMessage }}
+
+<form action = "http://localhost:5000/employee" method = "POST">
+ <fieldset>
+    <legend>Employee Form</legend>
+    {{ form.hidden_tag() }}
+
+
+<!-- employee_name = TextField("Employee Name", [validators.Required("Please enter your full name")]) -->
+<!-- username = TextField("User Name", [validators.Required("Please enter your username")]) -->
+<!-- user_password = TextField("Password", [validators.Required("Please enter password")]) -->
+<!-- email = TextField("Email",[validators.Required("Please enter your email address."), validators.Email("Please enter your email address.")])    -->
+<!-- gender = SelectField('Gender', choices = [('M', 'F'), ('Male', 'Female')]) -->
+<!-- salary = DecimalField("Salary") -->
+<!-- active = BooleanField("Active") -->
+<!-- submit = SubmitField("Send") -->
+
+
+
+    <table>
+        <tr>
+            <td>{{form.employee_name.label}}</td>
+            <td>{{form.employee_name(placeholder='Full name')}}</td>
+        </tr>
+
+        <tr>
+            <td>{{form.username.label}}</td>
+            <td>{{form.username}}</td>
+        </tr>
+
+        <tr>
+            <td>{{form.user_password.label}}</td>
+            <td>{{form.user_password}}</td>
+        </tr>
+
+        <tr>
+            <td>{{form.email.label}}</td>
+            <td>{{form.email}}</td>
+        </tr>
+
+        <tr>
+            <td>{{form.gender.label}}</td>
+            <td>{{form.gender}}</td>
+        </tr>
+
+        <tr>
+            <td>{{form.salary.label}}</td>
+            <td>{{form.salary(value=10000)}}</td>
+        </tr>
+
+        <tr>
+            <td>{{form.active.label}}</td>
+            <td>{{form.active(checked='checked')}}</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{{form.submit}}</td>
+        </tr>
+    </table>
+    
+   
+    
+ </fieldset>
+</form>
+
+{% include 'footer.html' %}

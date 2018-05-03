@@ -1,0 +1,37 @@
+{% include 'header.html' %}
+
+<h4 style = "text-align: center;">Employee List</h4>
+
+{{ data }}
+
+<hr />
+
+{% for row in data %}
+{{ row }}<br>
+{% endfor %}
+
+<hr />
+<table class="table">        
+    <thead>
+        <tr>
+            {% for col in columnList %}
+            <th>{{col}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            {% for cl in row %}
+            <td>                
+                {{ cl }}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'footer.html' %}
+
+

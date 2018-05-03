@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+   <body style = "padding:5px;">
+   	<title>My Flask App {{ pageTitle }}</title>
+   	<head>
+   		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+   		<script type="text/javascript" src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+   	</head>
+	<div>
+		<a href="/helloworld">Hello world</a>
+		| <a href="/canada">Hello Canada</a>
+		| <a href="/user/uday">User</a>
+		| <a href="/hellomember/Uday">Hello member</a>
+		| <a href="/hellosamplejson">sample data</a>
+		| <a href="/sampleform">sample form</a>
+		| <a href="/contact">Contact Form</a>
+		| <a href="/employee">Employee Form</a>
+		| <a href="/employeelist">Employee List</a>
+	</div>
+	

@@ -1,0 +1,13 @@
+{% include 'header.html' %}
+   
+	<h4>Sample form - submit the form and check the values</h4>
+	<form action="/sampleform" method="POST">
+		Name: <input type="text" name="firstName" id = "firstName" value="{{ formData['firstName'] }}">
+		<input type="text" name="lastName" id = "lastName" value="{{ formData['lastName']}}">
+		<input type="submit" name="submit" id = "submit" value="Submit">
+	</form>
+
+	{{ requestData }}
+	
+      
+{% include 'footer.html' %}
